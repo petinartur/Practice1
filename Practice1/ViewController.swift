@@ -9,11 +9,24 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var hiBroLabel: UILabel!
+    @IBOutlet weak var showButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        hiBroLabel.isHidden = true
+        showButton.layer.cornerRadius = 10
     }
 
-
+    @IBAction func showButtonPressed() {
+        hiBroLabel.isHidden.toggle()
+        if hiBroLabel.isHidden {
+            showButton.setTitle("Show text", for: .normal)
+        }else {
+            showButton.setTitle("Hide Text", for: .normal)
+        }
+    
+    
 }
 
+}
